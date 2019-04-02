@@ -1,0 +1,63 @@
+<p>
+  movie-list works!
+</p>
+
+
+<ul class="products">
+  <li *ngFor="let p of movies.products">
+    {{p.id}}
+    {{p.category}}
+    {{p.name}}
+    {{p.description}}
+    {{p.uploaddate}}
+    <button class="delete" title="delete product"
+      (click)="delete(p.id)">x</button>
+      <button class="delete" title="delete product"
+      (click)="showForEdit(p)">edit</button>
+      <button class="delete" title="delete product"
+      (click)="getProduct(p.id)">get data</button>
+  </li>
+</ul>
+
+<br>
+<br>
+
+<ul>
+  <li *ngFor="let l of movies.newproduct">
+    {{l.id}}
+    {{l.category}}
+    {{l.name}}
+    {{l.description}}
+    {{l.uploaddate}}
+  </li>
+</ul>
+
+<br>
+<br>
+
+<div>
+  <h2>Movies Add</h2>
+  <form  class="cat-form" #categoryForm="ngForm" (ngSubmit)="onSubmit(categoryForm)">
+    <div class="form-group">Id:
+      <input type="hidden" name="id" class="form-control" #id="ngModel" [(ngModel)]="movies.selectedMovies.id" />
+    </div><br>
+
+    <div class="form-group">Category:
+      <input  name="category" class="form-control" #category="ngModel" [(ngModel)]="movies.selectedMovies.category" placeholder="category"/>
+    </div><br>
+
+    <div class="form-group">Name:
+      <input name="name" class="form-control"  #name="ngModel" [(ngModel)]="movies.selectedMovies.name" placeholder="name"/>
+    </div><br>
+
+    <div class="form-group">Description:
+      <input name="description" class="form-control" #description="ngModel" [(ngModel)]="movies.selectedMovies.description" placeholder="description"/>
+    </div><br>
+
+    <div class="form-group">Upload Date:
+      <input name="uploaddate" class="form-control" #uploaddate="ngModel" [(ngModel)]="movies.selectedMovies.uploaddate" placeholder="upload date"/>
+    </div><br>
+
+    <button type="submit" >Save</button>
+  </form>
+</div>
