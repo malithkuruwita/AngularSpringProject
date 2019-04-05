@@ -23,9 +23,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/lib/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/lib/jquery-3.2.1.slim.min.js",
+              "src/assets/lib/popper.min.js",
+              "src/assets/lib/bootstrap.min.js",
+              "src/assets/js/navbar.js"
+            ]
           },
           "configurations": {
             "production": {
